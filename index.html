@@ -110,6 +110,15 @@ body::before {
 }
 .form-control:focus { background: rgba(0,0,0,0.7); border-color: var(--neon-pink); color: #fff; box-shadow: 0 0 10px rgba(255,0,255,0.2); }
 .form-control::placeholder { color: rgba(255,255,255,0.4); }
+.guia-box { margin: 4px 0 10px; border: 1px solid rgba(0,255,255,0.35); border-left: 3px solid var(--neon-cyan); background: rgba(0,255,255,0.05); }
+.guia-box > summary { cursor: pointer; list-style: none; padding: 7px 12px; color: var(--neon-cyan); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1px; }
+.guia-box > summary::-webkit-details-marker { display: none; }
+.guia-box > summary::before { content: '▸ '; color: var(--neon-pink); }
+.guia-box[open] > summary::before { content: '▾ '; }
+.guia-box .guia-body { padding: 4px 14px 12px; font-size: 0.85rem; color: #d6f5ff; }
+.guia-box .guia-body ol { margin: 6px 0 8px; padding-left: 20px; }
+.guia-box .guia-body li { margin-bottom: 4px; }
+.guia-box .guia-ej { border-left: 2px solid var(--neon-pink); padding: 4px 10px; margin-top: 6px; background: rgba(255,0,255,0.05); color: #ffd6ff; font-style: italic; }
 .insignia {
   display: inline-block;
   padding: 5px 15px;
@@ -658,21 +667,73 @@ body::before {
             <div class="col-md-6">
               <label class="form-label hud-label">1. Evidencia visual (Denotación)</label>
               <p class="small text-white-50">¿Qué muestra literalmente la imagen? ¿Qué elementos son identificables sin interpretación?</p>
+              <details class="guia-box">
+                <summary>💡 Cómo responder</summary>
+                <div class="guia-body">
+                  <strong>Objetivo:</strong> describir lo que <em>cualquiera</em> ve, SIN interpretar ni opinar.
+                  <ol>
+                    <li><strong>Inventaria</strong> los objetos, personas, colores, textos y planos que aparecen.</li>
+                    <li>Usa lenguaje <strong>literal y neutro</strong>: nombra, no valores ("una mujer sonriendo", no "una mujer feliz y exitosa").</li>
+                    <li>Si alguien tuviera que dibujar la escena solo con tu texto, debería poder hacerlo.</li>
+                    <li>Evita adjetivos cargados ("elegante", "moderno", "tradicional"): eso ya es connotación → va en el punto 2.</li>
+                  </ol>
+                  <div class="guia-ej">Ej.: "Sobre fondo rojo, un vaso de gaseosa amarilla con hielo, junto a un plato de comida criolla. Arriba, el logo de la marca en letras blancas."</div>
+                </div>
+              </details>
               <textarea class="form-control" id="dictamen-denotacion" rows="4" placeholder="Registra tu evidencia visual..."></textarea>
             </div>
             <div class="col-md-6">
               <label class="form-label hud-label">2. Análisis de campo (Connotación)</label>
               <p class="small text-white-50">¿Qué connota culturalmente cada elemento? ¿Qué valores o ideologías activa?</p>
+              <details class="guia-box">
+                <summary>💡 Cómo responder</summary>
+                <div class="guia-body">
+                  <strong>Objetivo:</strong> revelar los <em>significados culturales ocultos</em> tras lo que listaste en el punto 1.
+                  <ol>
+                    <li>Toma cada elemento denotado y pregúntate: <strong>"¿qué idea, valor o sentimiento evoca en esta cultura?"</strong></li>
+                    <li>Conecta con <strong>códigos culturales</strong>: nacionalidad, clase social, género, modernidad/tradición, familia, estatus, etc.</li>
+                    <li>Nombra los <strong>valores o ideologías</strong> que activa (p. ej. "peruanidad", "progreso", "lo casero como sinónimo de afecto").</li>
+                    <li>Recuerda: estos sentidos NO son naturales; dependen de un saber cultural compartido (naturalización).</li>
+                  </ol>
+                  <div class="guia-ej">Ej.: "El plato criollo connota identidad nacional y orgullo peruano; el rojo activa energía y pertenencia; la mesa compartida evoca familia y unión."</div>
+                </div>
+              </details>
               <textarea class="form-control" id="dictamen-connotacion" rows="4" placeholder="Registra tu análisis de campo..."></textarea>
             </div>
             <div class="col-md-6">
               <label class="form-label hud-label">3. Veredicto lingüístico (Texto)</label>
               <p class="small text-white-50">¿Cuál es la función del texto: anclaje o relevo?</p>
+              <details class="guia-box">
+                <summary>💡 Cómo responder</summary>
+                <div class="guia-body">
+                  <strong>Objetivo:</strong> decidir si el texto <em>fija</em> el sentido (anclaje) o <em>añade</em> sentido (relevo), y justificarlo.
+                  <ol>
+                    <li><strong>Transcribe</strong> el texto presente (slogan, marca, claim).</li>
+                    <li>Pregunta: ¿el texto <strong>limita</strong> las interpretaciones posibles de la imagen? → <strong>ANCLAJE</strong>.</li>
+                    <li>¿El texto <strong>aporta información nueva</strong> que la imagen sola no transmite, y juntos cuentan la historia? → <strong>RELEVO</strong>.</li>
+                    <li><strong>Nombra la función</strong> y explica POR QUÉ con el texto concreto del aviso (puede haber algo de ambas).</li>
+                  </ol>
+                  <div class="guia-ej">Ej.: "El slogan 'La bebida del Perú' funciona como ANCLAJE: entre los muchos sentidos del vaso amarillo, fija la lectura patriótica y descarta otras."</div>
+                </div>
+              </details>
               <textarea class="form-control" id="dictamen-texto" rows="4" placeholder="Registra tu veredicto lingüístico..."></textarea>
             </div>
             <div class="col-md-6">
               <label class="form-label hud-label">4. Conclusión del caso (Autonomía)</label>
               <p class="small text-white-50">¿Puede la imagen sobrevivir sola, sin el texto? ¿Qué se perdería o ganaría?</p>
+              <details class="guia-box">
+                <summary>💡 Cómo responder</summary>
+                <div class="guia-body">
+                  <strong>Objetivo:</strong> imaginar el aviso <em>sin texto</em> y evaluar si el mensaje sobrevive.
+                  <ol>
+                    <li>Haz el <strong>experimento mental</strong>: tapa el texto. ¿La imagen sigue comunicando lo mismo?</li>
+                    <li>Indica qué se <strong>pierde</strong> (¿se vuelve ambigua? ¿se pierde la marca o el sentido patriótico?).</li>
+                    <li>Indica qué se <strong>gana o se mantiene</strong> (a veces la imagen sola es más universal o más abierta).</li>
+                    <li>Cierra con un <strong>veredicto claro</strong>: ¿es autónoma, semiautónoma o dependiente del texto? Justifica.</li>
+                  </ol>
+                  <div class="guia-ej">Ej.: "Sin el slogan, la imagen sigue evocando peruanidad por la comida y los colores, pero se pierde la identificación de marca: el mensaje es semiautónomo."</div>
+                </div>
+              </details>
               <textarea class="form-control" id="dictamen-conclusion" rows="4" placeholder="Registra tu conclusión..."></textarea>
             </div>
           </div>
@@ -680,6 +741,19 @@ body::before {
             <div class="col-12 mt-2">
               <label class="form-label hud-label">5. Reflexión Integradora (Transferencia al Perú)</label>
               <p class="small text-white-50">¿La metodología de Barthes (Europa, años 60) es directamente transferible al análisis de publicidad peruana actual? ¿Qué adaptaciones requiere?</p>
+              <details class="guia-box">
+                <summary>💡 Cómo responder</summary>
+                <div class="guia-body">
+                  <strong>Objetivo:</strong> tomar postura argumentada sobre los <em>límites y adaptaciones</em> del modelo barthesiano en el Perú actual.
+                  <ol>
+                    <li><strong>Reconoce lo que SÍ se transfiere:</strong> la distinción denotación/connotación y las funciones anclaje/relevo son herramientas generales.</li>
+                    <li><strong>Señala los límites:</strong> Barthes analizó la Europa impresa de los 60; los <strong>códigos culturales</strong> son distintos (peruanidad, cosmovisión andina, mestizaje, criollismo, redes sociales, video).</li>
+                    <li><strong>Propón adaptaciones concretas:</strong> incorporar referentes locales, diversidad regional, plataformas digitales y nuevos lenguajes (memes, influencers).</li>
+                    <li>Cierra con una <strong>tesis propia</strong>: "es transferible como método, pero no como catálogo cerrado de significados".</li>
+                  </ol>
+                  <div class="guia-ej">Ej.: "El método de Barthes es transferible, pero los códigos no: 'lo casero' o 'lo nacional' en el Perú activan la cocina, lo andino y el mestizaje, sentidos ausentes en su corpus europeo."</div>
+                </div>
+              </details>
               <textarea class="form-control" id="dictamen-reflexion" rows="4" placeholder="Considera las diferencias de contexto cultural, especificidades del mercado peruano y los límites del modelo barthesiano..."></textarea>
             </div>
           <div class="text-center mt-5"><button class="btn-neon btn-neon-pink btn-lg" id="btnSubmitDictamen" type="button">📨 ENVIAR DICTAMEN (+30 XP GRUPAL)</button></div>
@@ -853,49 +927,57 @@ body::before {
         question: 'Según Barthes, ¿qué función cumple el mensaje lingüístico en la imagen publicitaria cuando fija el sentido de manera unívoca?',
         options: ['Relevo', 'Anclaje', 'Connotación', 'Denotación'],
         correct: 1, // índice de la correcta
-        explanation: 'El anclaje fija el sentido flotante de la imagen, dirigiendo la interpretación hacia un sentido preciso.'
+        explanation: 'El anclaje fija el sentido flotante de la imagen, dirigiendo la interpretación hacia un sentido preciso.',
+        conspiracy: 'El texto es el "manejador" que decide cuál de los mil sentidos posibles vas a leer. Te conducen y ni lo notas.'
       },
       {
         question: 'Barthes distingue tres tipos de mensajes en la imagen publicitaria. ¿Cuál NO es uno de ellos?',
         options: ['Mensaje lingüístico', 'Mensaje icónico codificado', 'Mensaje icónico no codificado', 'Mensaje subliminal auditivo'],
         correct: 3,
-        explanation: 'Los tres mensajes son: lingüístico, icónico codificado (connotación) e icónico no codificado (denotación).'
+        explanation: 'Los tres mensajes son: lingüístico, icónico codificado (connotación) e icónico no codificado (denotación).',
+        conspiracy: 'No hay "mensaje subliminal auditivo": esa es la pista falsa. La verdadera operación se transmite en las tres capas visibles que casi nadie separa.'
       },
       {
         question: '¿Qué ocurre cuando el texto lingüístico y la imagen se refuerzan mutuamente narrando la misma historia?',
         options: ['Anclaje', 'Relevo', 'Paradoja fotográfica', 'Naturalización'],
         correct: 1,
-        explanation: 'El relevo ocurre cuando el texto y la imagen se complementan, cada uno aportando lo que el otro no puede decir.'
+        explanation: 'El relevo ocurre cuando el texto y la imagen se complementan, cada uno aportando lo que el otro no puede decir.',
+        conspiracy: 'Cuando texto e imagen se reparten la misión, el mensaje completo solo existe al unir las dos piezas. Ninguna confiesa sola.'
       },
       {
         question: 'La "paradoja fotográfica" de Barthes consiste en que la fotografía publicitaria:',
         options: ['Es puramente objetiva y verídica', 'Presenta un mensaje connotado como si fuera pura denotación', 'No necesita texto para comunicar', 'Es más efectiva en blanco y negro'],
         correct: 1,
-        explanation: 'La paradoja fotográfica consiste en que la imagen connotada se presenta como denotación pura, naturalizando lo cultural.'
+        explanation: 'La paradoja fotográfica consiste en que la imagen connotada se presenta como denotación pura, naturalizando lo cultural.',
+        conspiracy: 'La coartada perfecta: la foto jura "yo solo muestro la realidad" mientras te inyecta un mensaje cargado. La objetividad es su mejor disfraz.'
       },
       {
         question: 'En el afiche Panzani, el texto "Pates Panzani" opera principalmente como:',
         options: ['Relevo narrativo', 'Anclaje identitario que fija la italianidad', 'Denotación pura sin connotación', 'Decoración visual sin función semántica'],
         correct: 1,
-        explanation: 'El texto ancla el sentido identitario (italianidad), fijando la interpretación cultural del producto.'
+        explanation: 'El texto ancla el sentido identitario (italianidad), fijando la interpretación cultural del producto.',
+        conspiracy: '"Panzani" no vende fideos: planta una bandera. Anclaje identitario que te hace leer "Italia" antes de razonarlo.'
       },
       {
         question: '¿Qué es la "naturalización" en el análisis barthesiano de la imagen?',
         options: ['El proceso de revelado fotográfico', 'El proceso por el cual lo culturalmente construido parece natural y evidente', 'La técnica de iluminación en estudios fotográficos', 'La selección de modelos para publicidad'],
         correct: 1,
-        explanation: 'La naturalización hace que lo culturalmente construido (connotación) parezca natural, objetivo y evidente (denotación).'
+        explanation: 'La naturalización hace que lo culturalmente construido (connotación) parezca natural, objetivo y evidente (denotación).',
+        conspiracy: 'La maniobra clave de toda la operación: convertir lo ideológico en "obvio". Si parece natural, dejas de cuestionarlo.'
       },
       {
         question: 'El mensaje icónico NO codificado se refiere a:',
         options: ['Lo que la imagen significa culturalmente', 'La percepción literal de objetos reconocibles sin aprendizaje cultural previo', 'El texto escrito que acompaña la imagen', 'Los códigos secretos de la publicidad'],
         correct: 1,
-        explanation: 'El mensaje icónico no codificado (denotación) es la percepción literal, la identificación de objetos sin interpretación cultural.'
+        explanation: 'El mensaje icónico no codificado (denotación) es la percepción literal, la identificación de objetos sin interpretación cultural.',
+        conspiracy: 'La capa "inocente" —"es solo un objeto"— es la coartada bajo la cual viaja, sin ser vista, la connotación.'
       },
       {
         question: 'Según Barthes, ¿por qué la publicidad fotográfica es una "trampa teórica"?',
         options: ['Porque es muy costosa de producir', 'Porque parece objetiva pero está completamente construida ideológicamente', 'Porque solo funciona en revistas impresas', 'Porque los consumidores no la entienden'],
         correct: 1,
-        explanation: 'La fotografía publicitaria parece mostrar la realidad (objetiva), pero cada elemento está ideológicamente construido.'
+        explanation: 'La fotografía publicitaria parece mostrar la realidad (objetiva), pero cada elemento está ideológicamente construido.',
+        conspiracy: 'La trampa: te entregan una escena "espontánea" donde cada objeto, luz y encuadre fue elegido. Nada es casual; todo está montado.'
       }
     ],
     usedWaveQuestions: [],
@@ -1230,20 +1312,25 @@ body::before {
         else if (i === selectedIdx && i !== question.correct) b.classList.add('wrong');
       });
 
+      var waveXP = window.miniGame ? window.miniGame.getWaveXP() : 10;
+      var teoria = '<div style="margin-top:8px;padding:8px 10px;border-left:3px solid var(--neon-cyan);background:rgba(0,255,255,0.06);color:#cfefff;font-style:normal;">📚 <strong>Refuerzo teórico:</strong> ' + question.explanation + '</div>';
+      var intel = question.conspiracy
+        ? '<div style="margin-top:6px;padding:8px 10px;border-left:3px solid var(--neon-pink);background:rgba(255,0,255,0.06);color:#ffd6ff;font-style:italic;">🕵️ <strong>INTEL DESCIFRADO:</strong> ' + question.conspiracy + '</div>'
+        : '';
       if (selectedIdx === question.correct) {
-        resDiv.innerHTML = '<span style="color:#0f0">✅ ¡Correcto! +' + window.miniGame ? window.miniGame.getWaveXP() : '10' + ' XP</span><br><small style="color:var(--neon-cyan)">' + question.explanation + '</small>';
-        this.addXP(window.miniGame ? window.miniGame.getWaveXP() : 10);
+        resDiv.innerHTML = '<span style="color:#0f0;font-weight:700">✅ ¡Correcto, agente! +' + waveXP + ' XP</span>' + teoria + intel;
+        this.addXP(waveXP);
         setTimeout(function() {
           overlay.classList.remove('active');
           if (typeof onAnsweredCallback === 'function') onAnsweredCallback(true);
-        }, 2500);
+        }, 4000);
       } else {
-        resDiv.innerHTML = '<span style="color:#f66">❌ Incorrecto. La respuesta correcta es: <strong>' + String.fromCharCode(65 + question.correct) + '</strong></span><br><small style="color:var(--neon-cyan)">' + question.explanation + '</small>';
+        resDiv.innerHTML = '<span style="color:var(--neon-yellow);font-weight:700">↺ Buen intento. La señal correcta era: <strong>' + String.fromCharCode(65 + question.correct) + '</strong></span>' + teoria + intel;
         setTimeout(function() {
           overlay.classList.remove('active');
           // Aunque falle, puede continuar
           if (typeof onAnsweredCallback === 'function') onAnsweredCallback(true);
-        }, 3500);
+        }, 5000);
       }
     },
 
@@ -1486,24 +1573,52 @@ body::before {
     },
 
 
+    // Retroalimentación teórica positiva + mensaje "intel" (conspirativo) por pregunta cerrada
+    quizF1Feedback: {
+      q1: {
+        teoria: 'Barthes identifica TRES mensajes coexistiendo en toda imagen publicitaria: el <strong>lingüístico</strong> (el texto), el <strong>icónico codificado</strong> (la connotación cultural) y el <strong>icónico no codificado</strong> (la denotación, lo literal). Separarlos es el primer paso del análisis.',
+        intel: 'Cada afiche transmite en TRES frecuencias a la vez. El agente que las aísla deja de "consumir" la imagen y empieza a interrogarla.'
+      },
+      q2: {
+        teoria: 'El <strong>anclaje</strong> es la función del mensaje lingüístico que <em>fija el sentido flotante</em> de la imagen: entre todos los significados posibles, el texto elige uno y dirige tu lectura hacia él.',
+        intel: 'El texto es el "manejador" que orienta tu mirada hacia el objetivo elegido. Ninguna palabra sobre la imagen está puesta por azar: te están conduciendo.'
+      },
+      q3: {
+        teoria: 'El mensaje icónico <strong>codificado</strong> depende de <em>códigos culturales</em> aprendidos (connotación: leer "italianidad" en un tomate); el <strong>no codificado</strong> es la percepción literal y casi universal de los objetos (denotación: "esto es un tomate").',
+        intel: 'Hay dos señales superpuestas: una abierta que cualquiera ve y otra cifrada en tu cultura. La operación publicitaria vive escondida en la señal cifrada.'
+      }
+    },
+
     quizF1Answers: {},
     quizF1Correct: { q1: '3', q2: 'b', q3: 'b' },
     quizF1Done: false,
+
+    renderQuizFeedback: function(isCorrect, correctLabel, info) {
+      var head = isCorrect
+        ? '<span style="color:#0f0;font-weight:700">✅ ¡Correcto, agente!</span>'
+        : '<span style="color:var(--neon-yellow);font-weight:700">↺ Buen intento. La señal correcta era: <strong>' + correctLabel + '</strong></span>';
+      var teoria = info && info.teoria
+        ? '<div style="margin-top:6px;padding:8px 10px;border-left:3px solid var(--neon-cyan);background:rgba(0,255,255,0.06);color:#cfefff;">📚 <strong>Refuerzo teórico:</strong> ' + info.teoria + '</div>'
+        : '';
+      var intel = info && info.intel
+        ? '<div style="margin-top:6px;padding:8px 10px;border-left:3px solid var(--neon-pink);background:rgba(255,0,255,0.06);color:#ffd6ff;font-style:italic;">🕵️ <strong>INTEL DESCIFRADO:</strong> ' + info.intel + '</div>'
+        : '';
+      return head + teoria + intel;
+    },
 
     submitQuizF1Opt: function(q, v) {
       if (this.quizF1Answers[q] !== undefined) return;
       this.quizF1Answers[q] = v;
       var correct = this.quizF1Correct[q];
       var isCorrect = String(v) === String(correct);
-      var fb = document.getElementById(q + '-fb');
-      if (fb) fb.innerHTML = isCorrect
-        ? '<span style="color:#0f0">✅ Correcto</span>'
-        : '<span style="color:#f66">❌ Incorrecto — la respuesta era: <strong>' + correct + '</strong></span>';
+      var correctLabel = '';
       document.querySelectorAll('.quiz-opt[data-q="' + q + '"]').forEach(function(b) {
         b.disabled = true;
-        if (b.getAttribute('data-v') === String(correct)) b.classList.add('correct');
+        if (b.getAttribute('data-v') === String(correct)) { b.classList.add('correct'); correctLabel = b.textContent.trim(); }
         else if (b.getAttribute('data-v') === String(v) && !isCorrect) b.classList.add('wrong');
       });
+      var fb = document.getElementById(q + '-fb');
+      if (fb) fb.innerHTML = this.renderQuizFeedback(isCorrect, correctLabel, this.quizF1Feedback[q]);
       var answered = Object.keys(this.quizF1Answers).length;
       if (answered === 3 && !this.quizF1Done) {
         this.quizF1Done = true;
@@ -1526,21 +1641,46 @@ body::before {
     quizF2Answers: {},
     quizF2Correct: { f2q1: 'b', f2q2: 'b', f2q3: 'b', f2q4: 'a', f2q5: 'b', f2q6: 'b' },
     quizF2Done: false,
+    quizF2Feedback: {
+      f2q1: {
+        teoria: '"Pates Panzani" funciona como <strong>anclaje identitario</strong>: el texto fija la lectura italiana del producto entre todos los sentidos posibles que la sola imagen dejaría flotando.',
+        intel: 'El nombre no vende fideos: planta una bandera. Detectado un anclaje que te hace leer "Italia" antes de pensarlo.'
+      },
+      f2q2: {
+        teoria: 'En el <strong>relevo</strong>, texto e imagen son complementarios: el texto <em>añade información que la imagen sola no puede transmitir</em>, y juntos hacen avanzar el mensaje (típico del cómic y la publicidad narrativa).',
+        intel: 'Cuando palabra e imagen se reparten la misión y cada una filtra una parte del dato, estás ante un relevo, no ante una simple etiqueta.'
+      },
+      f2q3: {
+        teoria: 'Tomates, pastas y la paleta verde-blanco-rojo <strong>connotan italianidad, mediterraneidad y cocina casera</strong>. Son significados culturales, no propiedades naturales del producto.',
+        intel: 'Tomate + pasta + colores = "italianidad" servida como si fuera obvia. Una connotación plantada para que la leas como naturaleza, no como construcción.'
+      },
+      f2q4: {
+        teoria: 'La <strong>connotación funciona gracias a códigos culturales compartidos</strong> por el receptor: sin ese saber previo aprendido, los signos no significarían lo que significan.',
+        intel: 'La connotación solo "prende" si compartes el código. La publicidad apuesta a que ya fuiste programado culturalmente para descifrarla sin resistencia.'
+      },
+      f2q5: {
+        teoria: 'La <strong>paradoja fotográfica</strong> sostiene que la foto <em>transmite un mensaje connotado presentándolo como si fuera pura denotación</em>: lo cultural se disfraza de registro objetivo de lo real.',
+        intel: 'La gran coartada: la foto jura ser "objetiva" mientras te entrega un mensaje cargado. Esa naturalidad fingida es justo donde se esconde la operación.'
+      },
+      f2q6: {
+        teoria: 'El mensaje icónico <strong>no codificado</strong> es la <em>percepción literal de objetos reconocibles sin aprendizaje cultural</em> (la denotación): "esto es un tomate, esto es un paquete".',
+        intel: 'La capa que parece inocente —"es solo un tomate"— es la coartada perfecta: bajo esa literalidad viaja, sin ser vista, la connotación.'
+      }
+    },
 
     submitQuizF2Opt: function(q, v) {
       if (this.quizF2Answers[q] !== undefined) return;
       this.quizF2Answers[q] = v;
       var correct = this.quizF2Correct[q];
       var isCorrect = v === correct;
-      var fb = document.getElementById(q + '-fb');
-      if (fb) fb.innerHTML = isCorrect
-        ? '<span style="color:#0f0">✅ Correcto</span>'
-        : '<span style="color:#f66">❌ Incorrecto</span>';
+      var correctLabel = '';
       document.querySelectorAll('.quiz-opt2[data-q="' + q + '"]').forEach(function(b) {
         b.disabled = true;
-        if (b.getAttribute('data-v') === correct) b.classList.add('correct');
+        if (b.getAttribute('data-v') === correct) { b.classList.add('correct'); correctLabel = b.textContent.trim(); }
         else if (b.getAttribute('data-v') === v && !isCorrect) b.classList.add('wrong');
       });
+      var fb = document.getElementById(q + '-fb');
+      if (fb) fb.innerHTML = this.renderQuizFeedback(isCorrect, correctLabel, this.quizF2Feedback[q]);
       var answered = Object.keys(this.quizF2Answers).length;
       if (answered === 6 && !this.quizF2Done) {
         this.quizF2Done = true;
